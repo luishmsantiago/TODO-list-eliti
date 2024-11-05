@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TO-DO LIST ELITI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .titulo {
+        background-color: blueviolet;
+        color: gold;
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      .container-todo {
+        width: 50%;
+        height: auto;
+        text-align: center;
+        color: gold;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        background-color: blueviolet;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #eee;
+        color: #333;
+        padding: 10px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo" id="titulo">TODO LIST ELITI</h1>
+    <div class="container-todo">
+      <h3>Insira seus afazeres na lista:</h3>
+      <div class="input-container">
+        <input type="text" id="todo-input"><br><br>
+        <button class="startButton" onclick="addTODO()">Adicionar a TODO</button><br><br>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+      // Carregar lista de TODOs salvos no localStorage ao carregar a página
+      document.addEventListener("DOMContentLoaded", function() {
+        loadTODOs();
+      });
+
+      function addTODO() {
+        const todoInput = document.getElementById('todo-input');
+        const todoText = todoInput.value.trim();
+        if (todoText) {
+          addTODOItem(todoText);
+          saveTODO(todoText);
+          todoInput.value = ""; // Limpar o campo de input
+        }
+      }
+
+      function addTODOItem(todoText) {
+        const todoList = document.getElementById('todo-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = todoText;
+        todoList.appendChild(listItem);
+      }
+
+      function saveTODO(todoText) {
+        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        todos.push(todoText);
+        localStorage.setItem('todos', JSON.stringify(todos));
+      }
+
+      function loadTODOs() {
+        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        todos.forEach(todoText => addTODOItem(todoText));
+      }
+    </script>
+  </body>
+</html>
