@@ -20,7 +20,8 @@ Para acessar o script HTML, CSS e JavaScript, acesse o arquivo index.html.
 
 ## Uso
 
-A TODO list (lista de afazeres), permite adicionar itens escritos numa caixa de texto para uma lista e apagá-los quando quisermos.
+A TODO list (lista de afazeres), permite adicionar itens escritos numa caixa de texto para uma lista e apagá-los quando quisermos. \
+Podemos adicionar o item usando o botão "Adicionar a TODO" ou o botão "Enter" do teclado.
 
 ![TODO list Inicial](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/images/todo-start.png)
 
