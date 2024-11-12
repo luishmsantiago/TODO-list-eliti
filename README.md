@@ -1,6 +1,6 @@
 # TO-DO LIST ELITI
 
-O exercício teve como objetivo a criação de uma página
+O exercício teve como objetivo de praticar lógica de programação e sintaxes das linguagens HTML, CSS e JavaScript.
 
 ## Índice
 
@@ -20,10 +20,21 @@ Para acessar o script HTML, CSS e JavaScript, acesse o arquivo index.html.
 
 ## Uso
 
-O contador possui os botões: aumentar, reduzir e resetar. O botão aumentar aumenta em +1 o valor que está sendo indicado, o botão reduzir diminui em -1 o valor indicado e o botão resetar retorna o valor indicado a 0.
+A TODO list (lista de afazeres), permite adicionar itens escritos numa caixa de texto para uma lista e apagá-los quando quisermos.
 
-![Contador Eliti](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/counter-eliti.png)
+![TODO list Inicial](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/images/todo-start.png)
 
+- Adicionando item na Lista 1:
+
+![TODO list Inicial](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/images/todo-input1.png)
+
+- Adicionando item na Lista 2:
+
+![TODO list Inicial](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/images/todo-input1e2.png)
+
+- Removendo itens da Lista 1 (os itens da Lista 2 são mantidos):
+
+![TODO list Inicial](https://github.com/luishmsantiago/TODO-list-eliti/blob/main/images/todo-delete1.png)
 
 ## Contribuição
 
