@@ -27,8 +27,8 @@ O contador possui os botões: aumentar, reduzir e resetar. O botão aumentar aum
 
 ## Contribuição
 
-Gostou do projeto e gostaria de contribuir com sua evolução? Estou aberto a receber críticas e elogios a respeito dele por e-mail ou pelo Linkedin:
-E-mail: luishdemsantiago@gmail.com
+Gostou do projeto e gostaria de contribuir com sua evolução? Estou aberto a receber críticas e elogios a respeito dele por e-mail ou pelo Linkedin: \
+E-mail: luishdemsantiago@gmail.com \
 LinkedIn: https://www.linkedin.com/in/luis-henrique-de-melo-santiago-02064a96
 
 ## Licença
@@ -37,6 +37,6 @@ O script não possui licença e pode ser utilizado por todos.
 
 ## Contato
 
-Idealizador do projeto: Luis Henrique de Melo Santiago
-E-mail: luishdemsantiago@gmail.com
+Idealizador do projeto: Luis Henrique de Melo Santiago \
+E-mail: luishdemsantiago@gmail.com \
 LinkedIn: https://www.linkedin.com/in/luis-henrique-de-melo-santiago-02064a96
