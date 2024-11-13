@@ -12,11 +12,12 @@ O exercício teve como objetivo de praticar lógica de programação e sintaxes 
 
 ## Instalação
 
+Link para acesso: https://todo-list-eliti.vercel.app/ \
 Baixar o arquivo "index.html" e abrí-lo em seu navegador.
 
 ### SCRIPT
 
-Para acessar o script HTML, CSS e JavaScript, acesse o arquivo index.html.
+Para acessar o script HTML, CSS e JavaScript, acesse o arquivo index.html. O projeto terá novas versões.
 
 ## Uso
 
