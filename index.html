@@ -10,9 +10,33 @@
         padding: 20px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+        border-radius: 30px;
       }
-      .container-todo {
-        width: 50%;
+      .headers, .bodies-todo {
+        display: flex;
+        justify-content: space-around;
+        border-radius: 30px;  
+      }
+      .startButton, .restartButton {
+        padding:10px;
+        border-radius: 30px;  
+      }
+
+      .text-box {
+        height: 40px;
+        width: 250px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .container-button {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 30px;
+      }
+      .container-todo1, .container-todo2 {
+        width: 40%;
         height: auto;
         text-align: center;
         color: gold;
@@ -21,63 +45,150 @@
         background-color: blueviolet;
         margin: 0 auto;
         padding: 20px;
+        border-radius: 30px;  
       }
       ul {
         list-style-type: none;
         padding: 0;
+        border-radius: 30px;  
       }
       li {
         background-color: #eee;
         color: #333;
         padding: 10px;
         margin: 5px 0;
+        border-radius: 30px;  
+      }
+      @media (min-width: 600px) {
+        .texto {
+          font-size: 50px;
+        }
+        .buttons {
+          font-size: 30px;
+        }
+        .num {
+          font-size: 150px;
+        }
       }
     </style>
   </head>
   <body>
-    <h1 class="titulo" id="titulo">TODO LIST ELITI</h1>
-    <div class="container-todo">
-      <h3>Insira seus afazeres na lista:</h3>
-      <div class="input-container">
-        <input type="text" id="todo-input"><br><br>
-        <button class="startButton" onclick="addTODO()">Adicionar a TODO</button><br><br>
-      </div>
-      <ul id="todo-list"></ul>
+    <div class="headers">
+      <h1 class="titulo" id="titulo1">TODO LIST ELITI</h1>
+      <h1 class="titulo" id="titulo2">TODO LIST ELITI</h1>
     </div>
-
+    <div class="bodies-todo">
+      <div class="container-todo1">
+        <h3>Insira seus afazeres na lista:</h3>
+        <div class="input-container">
+          <input type="text" class="text-box" id="todo-input" placeholder="Escreva aqui itens para a lista"><br><br>
+          <div class="container-button">
+            <button id="startButton1" class="startButton" onclick="addTODO1()">Adicionar a TODO</button>
+            <button id="B1" class="restartButton" onclick="restartTODO1()">Limpar Lista</button>
+          </div>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+      <div class="container-todo2">
+        <h3>Insira seus afazeres na lista:</h3>
+        <div class="input-container">
+          <input type="text" class="text-box" id="todo-input2" placeholder="Escreva aqui itens para a lista"><br><br>
+          <div class="container-button">
+            <button id="startButton2" class="startButton" onclick="addTODO2()">Adicionar a TODO</button>
+            <button id="restartButton2" class="restartButton" onclick="restartTODO2()">Limpar Lista</button>
+          </div>
+        </div>
+        <ul id="todo-list2"></ul>
+      </div>
+    </div>
     <script>
-      // Carregar lista de TODOs salvos no localStorage ao carregar a página
       document.addEventListener("DOMContentLoaded", function() {
-        loadTODOs();
+        loadTODOs1();
+        loadTODOs2();
       });
 
-      function addTODO() {
+      function addTODO1() {
         const todoInput = document.getElementById('todo-input');
         const todoText = todoInput.value.trim();
         if (todoText) {
-          addTODOItem(todoText);
-          saveTODO(todoText);
+          addTODOItem1(todoText);
+          saveTODO1(todoText);
           todoInput.value = ""; // Limpar o campo de input
         }
       }
 
-      function addTODOItem(todoText) {
+      function addTODO2() {
+        const todoInput = document.getElementById('todo-input2');
+        const todoText = todoInput.value.trim();
+        if (todoText) {
+          addTODOItem2(todoText);
+          saveTODO2(todoText);
+          todoInput.value = ""; // Limpar o campo de input
+        }
+      }
+
+      function addTODOItem1(todoText) {
         const todoList = document.getElementById('todo-list');
         const listItem = document.createElement('li');
         listItem.textContent = todoText;
         todoList.appendChild(listItem);
       }
 
-      function saveTODO(todoText) {
-        const todos = JSON.parse(localStorage.getItem('todos')) || [];
-        todos.push(todoText);
-        localStorage.setItem('todos', JSON.stringify(todos));
+      function addTODOItem2(todoText) {
+        const todoList = document.getElementById('todo-list2');
+        const listItem = document.createElement('li');
+        listItem.textContent = todoText;
+        todoList.appendChild(listItem);
       }
 
-      function loadTODOs() {
-        const todos = JSON.parse(localStorage.getItem('todos')) || [];
-        todos.forEach(todoText => addTODOItem(todoText));
+      function saveTODO1(todoText) {
+        const todos1 = JSON.parse(localStorage.getItem('todos1')) || [];
+        todos1.push(todoText);
+        localStorage.setItem('todos1', JSON.stringify(todos1));
       }
+
+      function saveTODO2(todoText) {
+        const todos2 = JSON.parse(localStorage.getItem('todos2')) || [];
+        todos2.push(todoText);
+        localStorage.setItem('todos2', JSON.stringify(todos2));
+      }
+
+      function loadTODOs1() {
+        const todos1 = JSON.parse(localStorage.getItem('todos1')) || [];
+        todos1.forEach(todoText => addTODOItem1(todoText));
+      }
+
+      function loadTODOs2() {
+        const todos2 = JSON.parse(localStorage.getItem('todos2')) || [];
+        todos2.forEach(todoText => addTODOItem2(todoText));
+      }
+
+      function restartTODO1() {
+        document.getElementById('todo-list').innerHTML = ""; // Limpa a lista na interface
+        localStorage.removeItem('todos1'); // Remove a lista do localStorage
+      }
+
+      function restartTODO2() {
+        document.getElementById('todo-list2').innerHTML = ""; // Limpa a lista na interface
+        localStorage.removeItem('todos2'); // Remove a lista do localStorage
+      }
+
+      var input1 = document.getElementById("todo-input");
+      input1.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("startButton1").click();
+        }
+      });
+
+      var input2 = document.getElementById("todo-input2");
+      input2.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("startButton2").click();
+        }
+      });
+      //Adicionar itens 
     </script>
   </body>
 </html>
